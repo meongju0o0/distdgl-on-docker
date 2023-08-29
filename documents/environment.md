@@ -15,6 +15,11 @@
     - NFS Client Setting
         - Kubernetes 'Persistent Volume Claim (PVC)'
     - Launching Pod, Training Pod (NFS Client)
+        - baseline image: python 3.11.5-bullseye
+            - pip install pip==23.2.1
+            - pip install torch==2.0.1 --index-url https://download.pytorch.org/whl/cpu
+            - pip install dgl==1.1.1 -f https://data.dgl.ai/wheels/repo.html
+            - pip install ogb==1.3.6
         - cmake
             - apt update
             - apt install build-essential
@@ -33,8 +38,3 @@
             - make install
             - export PATH=$PATH:~/local/bin
             - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/local/lib/
-        - baseline image: python 3.11.5-bullseye
-            - pip install pip==23.2.1
-            - pip install torch==2.0.1 --index-url https://download.pytorch.org/whl/cpu
-            - pip install dgl==1.1.1 -f https://data.dgl.ai/wheels/repo.html
-            - pip install ogb==1.3.6
