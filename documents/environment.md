@@ -1,0 +1,40 @@
+# environment
+- hardware environment
+    - CPU: i5-7500 @ 3.40GHz, x86_64
+    - RAM: 64GB
+    - CUDA: None
+
+- operating system
+    - Ubuntu 22.0.4 LTS (WSL2)
+    - Docker 4.22.1
+    - Kubernetes 1.27.2
+
+- container environment
+    - NFS Server Setting
+        - Kubernetes 'Persistent Volume (PV)'
+    - NFS Client Setting
+        - Kubernetes 'Persistent Volume Claim (PVC)'
+    - Launching Pod, Training Pod (NFS Client)
+        - cmake
+            - apt update
+            - apt install build-essential
+            - apt install cmake
+        - GKlib
+            - git clone https://github.com/KarypisLab/GKlib.git
+            - cd GKlib
+            - make config
+            - make
+            - make install
+            - cd /
+        - ParMETIS
+            - git clone https://github.com/KarypisLab/METIS.git
+            - cd METIS
+            - make config shared=1 cc=gcc prefix=~/local i64=1
+            - make install
+            - export PATH=$PATH:~/local/bin
+            - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/local/lib/
+        - baseline image: python 3.11.5-bullseye
+            - pip install pip==23.2.1
+            - pip install torch==2.0.1 --index-url https://download.pytorch.org/whl/cpu
+            - pip install dgl==1.1.1 -f https://data.dgl.ai/wheels/repo.html
+            - pip install ogb==1.3.6
