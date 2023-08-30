@@ -1,0 +1,9 @@
+FROM python:3.11.5-busseye
+
+COPY ../codes /workspace
+
+RUN apt-get update && \
+    apt-get install -y python3 && \
+    apt-get clean
+
+CMD ["python3"]
