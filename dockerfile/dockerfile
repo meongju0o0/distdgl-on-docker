@@ -20,11 +20,11 @@ RUN cd ~ && \
     cd GKlib && \
     make config && \
     make && \
-    make install && \
-    cd ~
+    make install
 
 # install ParMETIS
-RUN git clone https://github.com/KarypisLab/METIS.git && \
+RUN cd ~ && \
+    git clone https://github.com/KarypisLab/METIS.git && \
     cd METIS && \
     make config shared=1 cc=gcc prefix=~/local i64=1 $$ \
     make install && \

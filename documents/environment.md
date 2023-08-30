@@ -25,13 +25,15 @@
             - apt install build-essential
             - apt install cmake
         - GKlib
+            - cd ~
             - git clone https://github.com/KarypisLab/GKlib.git
             - cd GKlib
             - make config
             - make
             - make install
-            - cd /
+            
         - ParMETIS
+            - cd ~
             - git clone https://github.com/KarypisLab/METIS.git
             - cd METIS
             - make config shared=1 cc=gcc prefix=~/local i64=1
