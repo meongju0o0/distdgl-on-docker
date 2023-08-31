@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: graph-training
+  name: training
 spec:
-  serviceName: "graph-train-service"
+  serviceName: "training-service"
   replicas: 3
   selector:
     matchLabels:
@@ -15,11 +15,10 @@ spec:
     spec:
       containers:
       - name: graph-train-container
-        image: your-graph-training-image
-        command: ["your-training-command"]
+        image: distdgl-train-graph
         volumeMounts:
         - name: graph-partition-storage
-          mountPath: /data
+          mountPath: ~/distdgl-on-docker/data
       volumes:
       - name: graph-partition-storage
         persistentVolumeClaim:

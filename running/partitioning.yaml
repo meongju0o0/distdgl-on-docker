@@ -10,7 +10,7 @@ spec:
         image: distdgl-partition-graph
         volumeMounts:
         - name: graph-storage
-          mountPath: ~/data
+          mountPath: ~/distdgl-on-docker/data
       restartPolicy: Never
       volumes:
       - name: graph-storage
