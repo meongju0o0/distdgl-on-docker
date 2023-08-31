@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: graph-partition-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: graph-partition-container
+        image: partition-graph
+        volumeMounts:
+        - name: graph-storage
+          mountPath: ~/data
+      restartPolicy: Never
+      volumes:
+      - name: graph-storage
+        persistentVolumeClaim:
+          claimName: partitioned-graph-pvc
