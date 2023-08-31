@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: graph-partition-container
-        image: partition-graph
+        image: distdgl-partition-graph
         volumeMounts:
         - name: graph-storage
           mountPath: ~/data
@@ -15,4 +15,4 @@ spec:
       volumes:
       - name: graph-storage
         persistentVolumeClaim:
-          claimName: partitioned-graph-pvc
+          claimName: graph-partition-pvc

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: graph-training
+spec:
+  serviceName: "graph-train-service"
+  replicas: 3
+  selector:
+    matchLabels:
+      app: graph-train
+  template:
+    metadata:
+      labels:
+        app: graph-train
+    spec:
+      containers:
+      - name: graph-train-container
+        image: your-graph-training-image
+        command: ["your-training-command"]
+        volumeMounts:
+        - name: graph-partition-storage
+          mountPath: /data
+      volumes:
+      - name: graph-partition-storage
+        persistentVolumeClaim:
+          claimName: graph-partition-pvc
