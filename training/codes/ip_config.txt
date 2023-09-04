@@ -1,4 +1,0 @@
-training
-training-0
-training-1
-training-2
