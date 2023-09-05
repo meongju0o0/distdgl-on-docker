@@ -4,22 +4,22 @@ metadata:
   name: graph-partition-pv
 spec:
   capacity:
-    storage: 10Gi
+    storage: 20Gi
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    server: localhost
-    path: ~/distdgl-on-docker/data
+    server: 127.0.0.1
+    path: /home/meongju0o0/distdgl-on-docker/data
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: graph-partition-pv
+  name: graph-partition-pvc
 spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 10Gi
-  volumeName: graph-partition-pvc
+      storage: 20Gi
+  volumeName: graph-partition-pv
