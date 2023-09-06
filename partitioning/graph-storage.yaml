@@ -3,6 +3,7 @@ kind: PersistentVolume
 metadata:
   name: graph-partition-pv
 spec:
+  storageClassName: graph-partition-storage
   capacity:
     storage: 20Gi
   accessModes:
@@ -17,6 +18,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: graph-partition-pvc
 spec:
+  storageClassName: graph-partition-storage
   accessModes:
     - ReadWriteMany
   resources:

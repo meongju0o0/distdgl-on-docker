@@ -1,13 +1,10 @@
-apiVersion: apps/v1
-kind: StatefulSet
+apiVersion: batch/v1
+kind: Job
 metadata:
-  name: training
+  name: training-job
 spec:
-  serviceName: "training-service"
-  replicas: 3
-  selector:
-    matchLabels:
-      app: graph-train
+  completions: 4
+  parallelism: 4
   template:
     metadata:
       labels:
@@ -18,8 +15,9 @@ spec:
         image: distdgl-train-graph
         volumeMounts:
         - name: graph-partition-storage
-          mountPath: ~/distdgl-on-docker/data
+          mountPath: /home/meongju0o0/distdgl-on-docker/data
       volumes:
       - name: graph-partition-storage
         persistentVolumeClaim:
           claimName: graph-partition-pvc
+      restartPolicy: OnFailure
