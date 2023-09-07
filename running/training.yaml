@@ -14,10 +14,10 @@ spec:
       - name: graph-train-container
         image: distdgl-train-graph
         volumeMounts:
-        - name: graph-partition-storage
+        - name: graph-partition-pvc
           mountPath: /home/meongju0o0/distdgl-on-docker/data
       volumes:
-      - name: graph-partition-storage
+      - name: graph-partition-pvc
         persistentVolumeClaim:
           claimName: graph-partition-pvc
       restartPolicy: OnFailure

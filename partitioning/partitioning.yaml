@@ -9,10 +9,10 @@ spec:
       - name: graph-partition-container
         image: distdgl-partition-graph
         volumeMounts:
-        - name: graph-storage
+        - name: graph-partition-pvc
           mountPath: /home/meongju0o0/distdgl-on-docker/data
       restartPolicy: Never
       volumes:
-      - name: graph-storage
+      - name: graph-partition-pvc
         persistentVolumeClaim:
           claimName: graph-partition-pvc
