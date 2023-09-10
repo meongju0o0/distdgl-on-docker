@@ -11,17 +11,4 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: 172.30.30.170
-    path: /home/meongju0o0/distdgl-on-docker/data
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: graph-partition-pvc
-spec:
-  storageClassName: ""
-  accessModes:
-    - ReadWriteMany
-  resources:
-    requests:
-      storage: 20Gi
-  volumeName: graph-partition-pv
+    path: /workspace

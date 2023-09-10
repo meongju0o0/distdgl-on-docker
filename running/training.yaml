@@ -1,10 +1,13 @@
-apiVersion: batch/v1
-kind: Job
+apiVersion: apps/v1
+kind: StatefulSet
 metadata:
-  name: training-job
+  name: training-set
 spec:
-  completions: 4
-  parallelism: 4
+  replicas: 4
+  serviceName: training-service
+  selector:
+    matchLabels:
+      app: graph-train
   template:
     metadata:
       labels:
@@ -12,12 +15,19 @@ spec:
     spec:
       containers:
       - name: graph-train-container
-        image: distdgl-train-graph
+        image: meongju0o0/distdgl-training:latest
         volumeMounts:
         - name: graph-partition-pvc
-          mountPath: /home/meongju0o0/distdgl-on-docker/data
+          mountPath: /workspace
       volumes:
       - name: graph-partition-pvc
         persistentVolumeClaim:
           claimName: graph-partition-pvc
-      restartPolicy: OnFailure
+  volumeClaimTemplates:
+  - metadata:
+      name: graph-partition-pvc
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 20Gi

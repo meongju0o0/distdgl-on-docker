@@ -7,10 +7,10 @@ spec:
     spec:
       containers:
       - name: graph-partition-container
-        image: distdgl-partition-graph
+        image: meongju0o0/distdgl-partitioning:latest
         volumeMounts:
         - name: graph-partition-pvc
-          mountPath: /home/meongju0o0/distdgl-on-docker/data
+          mountPath: /workspace
       restartPolicy: Never
       volumes:
       - name: graph-partition-pvc
