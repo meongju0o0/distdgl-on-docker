@@ -10,7 +10,7 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    server: 127.0.0.1
+    server: 172.30.30.170
     path: /home/meongju0o0/distdgl-on-docker/data
 ---
 apiVersion: v1
