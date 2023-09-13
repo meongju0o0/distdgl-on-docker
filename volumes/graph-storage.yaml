@@ -12,3 +12,16 @@ spec:
   nfs:
     server: 172.30.30.170
     path: /workspace
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: graph-partition-pvc
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 20Gi
+  volumeName: graph-partition-pv
