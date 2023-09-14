@@ -6,6 +6,7 @@ It complies with the license terms of the original project and includes the foll
 This project is developed as part of Dist-DGL.
 
 Original Project: https://github.com/dmlc/dgl
+Original Paper: https://ieeexplore.ieee.org/abstract/document/9407264
 
 License: Apache License 2.0
 
