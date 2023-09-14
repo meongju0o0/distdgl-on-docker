@@ -22,6 +22,7 @@ To comply with the license, you must adhere to the following conditions:
 
 For more information, refer to the full license text provided in the link above.<br/>
 
+---
 
 distdgl-on-docker
 
