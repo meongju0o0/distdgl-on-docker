@@ -1,4 +1,4 @@
-### License
+## License
 
 This project is licensed under the Apache License 2.0.
 It complies with the license terms of the original project and includes the following additional conditions: Apache License 2.0
