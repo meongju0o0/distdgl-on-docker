@@ -3,11 +3,11 @@
 This project is licensed under the Apache License 2.0.<br/>
 It complies with the license terms of the original project and includes the following additional conditions: Apache License 2.0<br/>
 
-This project is developed as part of Dist-DGL.
-Original Project: https://github.com/dmlc/dgl
-Original Paper: https://ieeexplore.ieee.org/abstract/document/9407264
-License: Apache License 2.0
-Project Name: distdgl-on-docker
+This project is developed as part of Dist-DGL.<br/>
+Original Project: https://github.com/dmlc/dgl<br/>
+Original Paper: https://ieeexplore.ieee.org/abstract/document/9407264<br/>
+License: Apache License 2.0<br/>
+Project Name: distdgl-on-docker<br/>
 
 This project is licensed under the Apache License 2.0.<br/>
 The full text of the license can be found here:<br/>
