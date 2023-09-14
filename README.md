@@ -28,7 +28,7 @@ For more information, refer to the full license text provided in the link above.
 
 distdgl-on-docker
 
-Copyright 2023 meongju0o0
+Copyright 2023. meongju0o0
 
 This project is licensed under the Apache License 2.0.
 You must comply with the license terms of the original project and any additional conditions.
