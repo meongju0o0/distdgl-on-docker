@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: training-set
+  Namespace: distdgl
 spec:
   replicas: 4
   serviceName: training-service

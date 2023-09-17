@@ -2,6 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: graph-partition-job
+  Namespace: distdgl
 spec:
   template:
     spec:
