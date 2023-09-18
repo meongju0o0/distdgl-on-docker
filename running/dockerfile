@@ -36,7 +36,7 @@ RUN cd /workspace
 ENV PATH="${PATH}:/root/local/bin"
 ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/root/local/lib"
 
-CMD ["python3" ,"/workspace/codes/launch.py" ,"--num_trainers", "4",
-    "--num_samplers", "0", "--num_servers", "1", "--part_config", "data/ogbn-products.json",
-    "--ip_config", "ip_config.txt",
+CMD ["python3" ,"/workspace/codes/launch.py" ,"--num_trainers", "4", \
+    "--num_samplers", "0", "--num_servers", "1", "--part_config", "data/ogbn-products.json", \
+    "--ip_config", "ip_config.txt", \
     "\"python3 node_classification.py --graph_name ogbn-products --ip_config ip_config.txt --num_epochs 30 --batch_size 1000\""]
