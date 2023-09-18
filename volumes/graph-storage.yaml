@@ -10,7 +10,7 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    server: 172.30.30.170
+    server: 163.180.118.137
     path: /workspace
 ---
 apiVersion: v1
