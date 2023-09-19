@@ -5,14 +5,15 @@
     - CUDA: None
 
 - operating system
-    - Ubuntu 22.0.4 LTS (WSL2)
-    - Docker 4.22.1
-    - Kubernetes 1.27.2
+    - Ubuntu 22.0.4 LTS (NFS Server)
+        - sudo apt-get install nfs-kernel-server
+    - Windows 10
+        - Docker 4.22.1
+        - Kubernetes 1.27.2
 
 - container environment
-    - NFS Server Setting
-        - Kubernetes 'Persistent Volume (PV)'
     - NFS Client Setting
+        - Kubernetes 'Persistent Volume (PV)'
         - Kubernetes 'Persistent Volume Claim (PVC)'
     - Launching Pod, Training Pod (NFS Client)
         - baseline image: python 3.11.5-bullseye
@@ -31,7 +32,6 @@
             - make config
             - make
             - make install
-            
         - ParMETIS
             - cd ~
             - git clone https://github.com/KarypisLab/METIS.git
